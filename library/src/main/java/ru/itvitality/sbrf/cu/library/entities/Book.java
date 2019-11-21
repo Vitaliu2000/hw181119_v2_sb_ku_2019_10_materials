@@ -20,6 +20,7 @@ public class Book {
     private String author;
 
     @OneToMany(targetEntity = Movement.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "id")
     private List<Movement> movements;
 
     public Long getId() {
