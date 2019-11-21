@@ -1,8 +1,6 @@
 package ru.itvitality.sbrf.cu.library.entities;
 
-import javax.persistence.Column;
-import javax.persistence.DiscriminatorValue;
-import javax.persistence.Entity;
+import javax.persistence.*;
 
 @Entity
 @DiscriminatorValue("client")
@@ -30,4 +28,7 @@ public class Client extends Holder {
         this.phone = phone;
         return this;
     }
+    /*@OneToOne(targetEntity = Holder.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "id")
+    private List<Holder> holders;*/
 }

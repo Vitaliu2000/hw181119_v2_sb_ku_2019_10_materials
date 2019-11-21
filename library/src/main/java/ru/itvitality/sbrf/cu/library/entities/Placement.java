@@ -1,14 +1,12 @@
 package ru.itvitality.sbrf.cu.library.entities;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
-@Table(name = "movement")
+@Table(name = "placement")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn()
-public class Movement {
-
+public class Placement{
     @Id
     @GeneratedValue( strategy = GenerationType.SEQUENCE)
     private Long id;
@@ -20,7 +18,7 @@ public class Movement {
         return id;
     }
 
-    public Movement setId(Long id) {
+    public Placement setId(Long id) {
         this.id = id;
         return this;
     }
@@ -29,11 +27,11 @@ public class Movement {
         return name;
     }
 
-    public Movement setName(String name) {
+    public Placement setName(String name) {
         this.name = name;
         return this;
     }
-    @OneToMany(targetEntity = Holder.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    /*@OneToOne(targetEntity = Holder.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "id")
-    private List<Holder> holders;
+    private List<Holder> holders;*/
 }

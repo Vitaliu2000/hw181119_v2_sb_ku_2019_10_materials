@@ -32,4 +32,11 @@ public class Holder {
         this.name = name;
         return this;
     }
+    /*@OneToOne(targetEntity = Placement.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "id")
+    private List<Placement> placements;*/
+
+    /*@OneToOne(targetEntity = Client.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "id")
+    private List<Client> clients;*/
 }
